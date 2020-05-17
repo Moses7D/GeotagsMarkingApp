@@ -1,34 +1,38 @@
 package database;
 
-import android.location.Location;
+import com.google.android.gms.maps.model.LatLng;
 
 public class GeoMarker {
-    public int colour;
+
+    public LatLng location;
     public String[] sensorData;
+    public int colour;
+    public String title;
     public String description;
-    public Location location;
+
 
     public GeoMarker() {
     }
 
-    public GeoMarker( int colour, String[] sensorData, String description, Location location) {
-        this.colour = colour;
+    public GeoMarker(LatLng location, String[] sensorData) {
+        this.location = location;
         this.sensorData = sensorData;
+    }
+
+    public GeoMarker(LatLng location, String[] sensorData, int colour, String title, String description) {
+        this.location = location;
+        this.sensorData = sensorData;
+        this.colour = colour;
+        this.title = title;
         this.description = description;
+    }
+
+    public LatLng getLocation() {
+        return location;
+    }
+
+    public void setLocation(LatLng location) {
         this.location = location;
-    }
-
-    public GeoMarker(String[] sensorData, Location location) {
-        this.sensorData = sensorData;
-        this.location = location;
-    }
-
-    public int getColour() {
-        return colour;
-    }
-
-    public void setColour(int colour) {
-        this.colour = colour;
     }
 
     public String[] getSensorData() {
@@ -39,19 +43,27 @@ public class GeoMarker {
         this.sensorData = sensorData;
     }
 
+    public int getColour() {
+        return colour;
+    }
+
+    public void setColour(int colour) {
+        this.colour = colour;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Location getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location location) {
-        this.location = location;
     }
 }

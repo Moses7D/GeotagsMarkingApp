@@ -6,31 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <fragment
-        android:id="@+id/frag_cont"
-        android:name="com.androidexercises.geotagsmarkingapp.ColourPickerFragment"
+    <TextView
+        android:id="@+id/title_txt"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHor02"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button_next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/padding_hor"
-        android:layout_marginEnd="@dimen/padding_ver"
-        android:layout_marginBottom="@dimen/padding_hor_large"
-        android:background="@drawable/ic_double_arrow"
-        android:backgroundTint="#CACACA"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <fragment
+        android:id="@+id/frag_cont"
+        android:name="com.androidexercises.geotagsmarkingapp.BackgroundFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineHor01"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineHor02" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/bottom_txt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/padding_ver"
@@ -38,16 +34,22 @@
         android:layout_marginEnd="@dimen/padding_ver"
         android:lines="2"
         android:text="@string/sensor_spinner"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVer01"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frag_cont" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
+    <Button
+        android:id="@+id/btn_next"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.85" />
+        android:layout_height="@dimen/double_arrow_height"
+        android:layout_marginTop="@dimen/padding_hor"
+        android:layout_marginEnd="@dimen/padding_ver"
+        android:layout_marginBottom="@dimen/padding_hor_large"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineHor01"
+        android:onClick="next"/>
 
     <Spinner
         android:id="@+id/sensor_spinner"
@@ -58,28 +60,26 @@
         android:layout_marginEnd="@dimen/padding_ver"
         android:layout_marginBottom="@dimen/padding_hor_large"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVer01"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/bottom_txt" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
+        android:id="@+id/guidelineHor01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHor02"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.05" />
 
-    <TextView
-        android:id="@+id/title_txt"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
+        android:id="@+id/guidelineVer01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"

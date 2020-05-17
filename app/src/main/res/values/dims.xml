@@ -4,6 +4,11 @@
     <dimen name="padding_hor_large">16dp</dimen>
     <dimen name="padding_ver">10dp</dimen>
     <dimen name="padding_ver_large">14dp</dimen>
+    <dimen name="und_constr_img_height">614dp</dimen>
+    <dimen name="und_constr_img_width">512dp</dimen>
+    <!-- App specific dimensions -->
+    <dimen name="double_arrow_height">56dp</dimen>
+    <dimen name="double_arrow_width">86dp</dimen>
     <dimen name="circle_size">100dp</dimen>
 
 </resources>

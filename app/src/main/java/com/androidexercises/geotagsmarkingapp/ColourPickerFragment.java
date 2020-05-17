@@ -24,7 +24,7 @@ public class ColourPickerFragment extends Fragment {
 
     private HSLColorPicker colourPickerView;
     private ImageView imgView;
-    private int colour;
+    public int colour;
 
 
     public ColourPickerFragment() {
@@ -52,7 +52,4 @@ public class ColourPickerFragment extends Fragment {
         return v;
     }
 
-    public int getColour() {
-        return colour;
-    }
 }
