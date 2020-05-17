@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ColorPicker">
+        <attr format="dimension" name="arc_width"/>
+        <attr format="dimension" name="stroke_width"/>
+        <attr format="dimension" name="indicator_radius"/>
+        <attr format="dimension" name="indicator_stroke_width"/>
+        <attr format="color" name="indicator_stroke_color"/>
+        <attr format="color" name="stroke_color"/>
+        <attr format="float" name="arc_length"/>
+        <attr format="dimension" name="radius_offset"/>
+    </declare-styleable>
+    <declare-styleable name="HSLColorPicker">
+        <attr format="dimension" name="hue_arc_width"/>
+        <attr format="dimension" name="saturation_arc_width"/>
+        <attr format="dimension" name="lightness_arc_width"/>
+
+        <attr format="dimension" name="hue_stroke_width"/>
+        <attr format="dimension" name="saturation_stroke_width"/>
+        <attr format="dimension" name="lightness_stroke_width"/>
+
+        <attr format="dimension" name="hue_indicator_radius"/>
+        <attr format="dimension" name="saturation_indicator_radius"/>
+        <attr format="dimension" name="lightness_indicator_radius"/>
+
+        <attr format="dimension" name="hue_indicator_stroke_width"/>
+        <attr format="dimension" name="saturation_indicator_stroke_width"/>
+        <attr format="dimension" name="lightness_indicator_stroke_width"/>
+
+        <attr format="color" name="hue_indicator_stroke_color"/>
+        <attr format="color" name="saturation_indicator_stroke_color"/>
+        <attr format="color" name="lightness_indicator_stroke_color"/>
+
+        <attr format="color" name="hue_stroke_color"/>
+        <attr format="color" name="saturation_stroke_color"/>
+        <attr format="color" name="lightness_stroke_color"/>
+
+        <attr format="float" name="hue_start_angle"/>
+        <attr format="float" name="saturation_start_angle"/>
+        <attr format="float" name="lightness_start_angle"/>
+
+        <attr format="float" name="hue_arc_length"/>
+        <attr format="float" name="saturation_arc_length"/>
+        <attr format="float" name="lightness_arc_length"/>
+
+        <attr format="dimension" name="hue_radius_offset"/>
+        <attr format="dimension" name="saturation_radius_offset"/>
+        <attr format="dimension" name="lightness_radius_offset"/>
+    </declare-styleable>
+    <declare-styleable name="RGBColorPicker">
+        <attr format="dimension" name="red_arc_width"/>
+        <attr format="dimension" name="green_arc_width"/>
+        <attr format="dimension" name="blue_arc_width"/>
+
+        <attr format="dimension" name="red_stroke_width"/>
+        <attr format="dimension" name="green_stroke_width"/>
+        <attr format="dimension" name="blue_stroke_width"/>
+
+        <attr format="dimension" name="red_indicator_radius"/>
+        <attr format="dimension" name="green_indicator_radius"/>
+        <attr format="dimension" name="blue_indicator_radius"/>
+
+        <attr format="dimension" name="red_indicator_stroke_width"/>
+        <attr format="dimension" name="green_indicator_stroke_width"/>
+        <attr format="dimension" name="blue_indicator_stroke_width"/>
+
+        <attr format="color" name="red_indicator_stroke_color"/>
+        <attr format="color" name="green_indicator_stroke_color"/>
+        <attr format="color" name="blue_indicator_stroke_color"/>
+
+        <attr format="color" name="red_stroke_color"/>
+        <attr format="color" name="green_stroke_color"/>
+        <attr format="color" name="blue_stroke_color"/>
+
+        <attr format="float" name="red_start_angle"/>
+        <attr format="float" name="green_start_angle"/>
+        <attr format="float" name="blue_start_angle"/>
+
+        <attr format="float" name="red_arc_length"/>
+        <attr format="float" name="green_arc_length"/>
+        <attr format="float" name="blue_arc_length"/>
+
+        <attr format="dimension" name="red_radius_offset"/>
+        <attr format="dimension" name="green_radius_offset"/>
+        <attr format="dimension" name="blue_radius_offset"/>
+    </declare-styleable>
+</resources>

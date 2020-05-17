@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_hor">12dp</dimen>
+    <dimen name="padding_hor_large">16dp</dimen>
+    <dimen name="padding_ver">10dp</dimen>
+    <dimen name="padding_ver_large">14dp</dimen>
+    <dimen name="circle_size">100dp</dimen>
+
+</resources>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Geo-tags Marking App</string>
+    <string name="title_activity_main_maps">Map</string>
+
+    <string name="sensor_spinner">Choose Sensor to draw data from</string>
+    <string-array name="titles">
+        <item>Find your location</item>
+        <item>Sensor</item>
+        <item>Your Description (optional)</item>
+        <item>Colour your marker (optional)</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
