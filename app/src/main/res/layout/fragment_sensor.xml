@@ -7,14 +7,52 @@
     android:layout_height="match_parent"
     tools:context=".SensorFragment">
 
-    <ImageView
-        android:id="@+id/und_constr_img"
-        android:layout_width="@dimen/und_constr_img_width"
-        android:layout_height="@dimen/und_constr_img_height"
-        android:src="@drawable/bg_under_construction"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/sns_spinner_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_hor_large"
+        android:text="@string/sns_spinner_label"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Spinner
+        android:id="@+id/sns_spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_hor"
+        app:layout_constraintEnd_toEndOf="@+id/sns_spinner_label"
+        app:layout_constraintStart_toStartOf="@+id/sns_spinner_label"
+        app:layout_constraintTop_toBottomOf="@+id/sns_spinner_label" />
+
+    <Button
+        android:id="@+id/sns_btn_measure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_hor_large"
+        android:text="@string/sns_btn_str_measure"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sns_spinner" />
+
+    <TextView
+        android:id="@+id/sns_measure_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_hor"
+        android:layout_marginEnd="@dimen/padding_ver"
+        android:text="@string/sns_value_label"
+        app:layout_constraintEnd_toStartOf="@+id/sns_measure_txt"
+        app:layout_constraintStart_toStartOf="@+id/sns_spinner"
+        app:layout_constraintTop_toBottomOf="@+id/sns_btn_measure" />
+
+    <TextView
+        android:id="@+id/sns_measure_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_hor"
+        app:layout_constraintEnd_toEndOf="@+id/sns_spinner"
+        app:layout_constraintTop_toBottomOf="@+id/sns_btn_measure" />
 </androidx.constraintlayout.widget.ConstraintLayout>

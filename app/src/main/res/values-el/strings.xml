@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="titles">
+        <item>Τοποθεσία</item>
+        <item>Δεδομένα αισθητήρα</item>
+        <item>Η περιγραφή σου(προαιρετικό)</item>
+        <item>Χρώμα σημαδιού</item>
+        <item>Τελικά βήματα</item>
+    </string-array>
+    <string-array name="details">
+        <item>Βρες την τοποθεσία σου για να τοποθετηθεί το σημάδι</item>
+        <item>Επίλεξε έναν αισθητήρα για να πάρεις μέτρηση</item>
+        <item>Πρόσθεσε μια σύντομη περιγραφή</item>
+        <item>Επίλεξε χρώμα για το σημάδι</item>
+        <item>Έλεγξε τα δεδομένα και ανέβασέ τα</item>
+    </string-array>
+    <string-array name="sensor_names">
+        <item>Φωτός</item>
+        <item>Ατμοσφαιρικής Πίεσης</item>
+        <item>Υγρασίας</item>
+        <item>Θερμοκρασίας</item>
+    </string-array>
+    <string name="act_btn_str_next">Επόμενο</string>
+    <string name="act_btn_str_commit">Αποστολή</string>
+    <string name="act_btn_str_again">Ξανά;</string>
+    <string name="act_toast_pos">Η αποστολή πέτυχε! \n Ευχαριστούμε!</string>
+    <string name="act_toast_neg">Κάτι πήγε λάθος..</string>
+    <string name="loc_dialogue_txt">Η τοποθεσία είναι απενεργοποιημένη, επιθυμείς να την ενεργοποιήσεις;</string>
+    <string name="loc_ans_pos">Ναι</string>
+    <string name="loc_ans_neg">Όχι</string>
+
+    <string name="sns_spinner_label">Επίλεξε έναν αισθητήρα</string>
+    <string name="sns_btn_str_measure">Πάρε μέτρηση</string>
+    <string name="sns_value_label">Τιμή:</string>
+
+    <string name="desc_title_label">Τίτλος σημαδιού: </string>
+    <string name="desc_desc_label">Περιγραφή: </string>
+    <string name="desc_title_hint">Ο τίτλος/όνομα του σημαδιού σου</string>
+    <string name="desc_desc_hint">Η περιγραφή του σημαδιού σου</string>
+
+    <string name="fn_sns_ttl_label">Τα δεδομένα του αισθητήρα σου</string>
+    <string name="fn_sns_type_label">Τύπος αισθητήρα: </string>
+    <string name="fn_sns_measure_label">Τιμή: </string>
+</resources>

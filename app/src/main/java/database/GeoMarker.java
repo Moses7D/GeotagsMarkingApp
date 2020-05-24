@@ -2,27 +2,31 @@ package database;
 
 import com.google.android.gms.maps.model.LatLng;
 
+
+/**
+ * POJO class that stores the data to send to the database.
+ */
 public class GeoMarker {
 
     public LatLng location;
-    public String[] sensorData;
-    public int colour;
+    public int typeCode; //value of the Sensor class constants TYPE_<sensor>
+    public float sensorMeasurement;
+    public float hue;
     public String title;
     public String description;
 
 
     public GeoMarker() {
+        typeCode = -1;
+        sensorMeasurement = 1.0f;
+        hue = -1.0f;
     }
 
-    public GeoMarker(LatLng location, String[] sensorData) {
+    public GeoMarker(LatLng location, int typeCode, float sensorMeasurement, float hue, String title, String description) {
         this.location = location;
-        this.sensorData = sensorData;
-    }
-
-    public GeoMarker(LatLng location, String[] sensorData, int colour, String title, String description) {
-        this.location = location;
-        this.sensorData = sensorData;
-        this.colour = colour;
+        this.typeCode = typeCode;
+        this.sensorMeasurement = sensorMeasurement;
+        this.hue = hue;
         this.title = title;
         this.description = description;
     }
@@ -35,20 +39,28 @@ public class GeoMarker {
         this.location = location;
     }
 
-    public String[] getSensorData() {
-        return sensorData;
+    public int getTypeCode() {
+        return typeCode;
     }
 
-    public void setSensorData(String[] sensorData) {
-        this.sensorData = sensorData;
+    public void setTypeCode(int typeCode) {
+        this.typeCode = typeCode;
     }
 
-    public int getColour() {
-        return colour;
+    public float getSensorMeasurement() {
+        return sensorMeasurement;
     }
 
-    public void setColour(int colour) {
-        this.colour = colour;
+    public void setSensorMeasurement(float sensorMeasurement) {
+        this.sensorMeasurement = sensorMeasurement;
+    }
+
+    public float getHue() {
+        return hue;
+    }
+
+    public void setHue(float hue) {
+        this.hue = hue;
     }
 
     public String getTitle() {
@@ -65,5 +77,14 @@ public class GeoMarker {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void clear(){
+        location = null;
+        typeCode = -1;
+        sensorMeasurement = -1.0f;
+        hue = -1.0f;
+        title = null;
+        description = null;
     }
 }

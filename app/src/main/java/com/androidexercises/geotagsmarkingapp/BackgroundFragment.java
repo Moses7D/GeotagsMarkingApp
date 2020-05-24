@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BackgroundFragment extends Fragment {
+public class BackgroundFragment extends Fragment implements Resettable{
 
     public BackgroundFragment() {
         // Required empty public constructor
@@ -24,5 +24,10 @@ public class BackgroundFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_background, container, false);
+    }
+
+    @Override
+    public void reset() {
+
     }
 }

@@ -1,15 +1,46 @@
 <resources>
-    <string name="app_name">Geo-tags Marking App</string>
-    <string name="title_activity_main_maps">Map</string>
-
-    <string name="sensor_spinner">Choose Sensor to draw data from</string>
+    <string name="app_name" translatable="false">Geo-tags Marking App</string>
     <string-array name="titles">
-        <item>Find your location</item>
-        <item>Sensor</item>
-        <item>Your Description (optional)</item>
-        <item>Colour your marker (optional)</item>
+        <item>Location</item>
+        <item>Sensor data</item>
+        <item>Your description (optional)</item>
+        <item>Marker colour(optional)</item>
+        <item>Final steps</item>
     </string-array>
+    <string-array name="details">
+        <item>Find your location do add a marker</item>
+        <item>Choose a sensor to draw data from, for this location</item>
+        <item>Add a short description for this location</item>
+        <item>Choose a colour for your marker</item>
+        <item>Inspect the data and upload to the server</item>
+    </string-array>
+    <string-array name="sensor_names">
+        <item>Light</item>
+        <item>Pressure</item>
+        <item>Humidity</item>
+        <item>Temperature</item>
+    </string-array>
+    <string name="act_btn_str_next">Next</string>
+    <string name="act_btn_str_commit">Commit</string>
+    <string name="act_btn_str_again">Again?</string>
+    <string name="act_toast_pos">Commit to database was successful! \n Thank you!</string>
+    <string name="act_toast_neg">Oops.. Something went wrong!</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="title_activity_maps">Map</string>
+    <string name="loc_dialogue_txt">Your GPS seems to be disabled, do you want to enable it?</string>
+    <string name="loc_ans_pos">Yes</string>
+    <string name="loc_ans_neg">No</string>
+
+    <string name="sns_spinner_label">Choose Sensor to draw data from</string>
+    <string name="sns_btn_str_measure">Take Measurement</string>
+    <string name="sns_value_label">Value:</string>
+
+    <string name="desc_title_label">Marker Title: </string>
+    <string name="desc_desc_label">Description: </string>
+    <string name="desc_title_hint">Your marker\'s title/name</string>
+    <string name="desc_desc_hint">Your marker\'s description</string>
+
+    <string name="fn_sns_ttl_label">Your sensor\'s data</string>
+    <string name="fn_sns_type_label">Sensor Type: </string>
+    <string name="fn_sns_measure_label">Value: </string>
+    <string name="fn_desc" translatable="false">%s\n%s</string>
 </resources>
