@@ -1,14 +1,16 @@
 package database;
 
-import com.google.android.gms.maps.model.LatLng;
+import com.google.firebase.firestore.GeoPoint;
 
 
 /**
  * POJO class that stores the data to send to the database.
+ * Firestore uses {@link GeoPoint} instances to mark a location, so in order to secure data
+ * compatibility GeoPoint instances are used by the app as well.
  */
 public class GeoMarker {
 
-    public LatLng location;
+    public GeoPoint location;
     public int typeCode; //value of the Sensor class constants TYPE_<sensor>
     public float sensorMeasurement;
     public float hue;
@@ -22,7 +24,7 @@ public class GeoMarker {
         hue = -1.0f;
     }
 
-    public GeoMarker(LatLng location, int typeCode, float sensorMeasurement, float hue, String title, String description) {
+    public GeoMarker(GeoPoint location, int typeCode, float sensorMeasurement, float hue, String title, String description) {
         this.location = location;
         this.typeCode = typeCode;
         this.sensorMeasurement = sensorMeasurement;
@@ -31,11 +33,11 @@ public class GeoMarker {
         this.description = description;
     }
 
-    public LatLng getLocation() {
+    public GeoPoint getLocation() {
         return location;
     }
 
-    public void setLocation(LatLng location) {
+    public void setLocation(GeoPoint location) {
         this.location = location;
     }
 

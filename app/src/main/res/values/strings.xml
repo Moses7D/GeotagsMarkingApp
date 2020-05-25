@@ -34,9 +34,9 @@
     <string name="sns_btn_str_measure">Take Measurement</string>
     <string name="sns_value_label">Value:</string>
 
-    <string name="desc_title_label">Marker Title: </string>
+    <string name="desc_ttl_label">Marker Title: </string>
+    <string name="desc_ttl_hint">Your marker\'s title/name</string>
     <string name="desc_desc_label">Description: </string>
-    <string name="desc_title_hint">Your marker\'s title/name</string>
     <string name="desc_desc_hint">Your marker\'s description</string>
 
     <string name="fn_sns_ttl_label">Your sensor\'s data</string>

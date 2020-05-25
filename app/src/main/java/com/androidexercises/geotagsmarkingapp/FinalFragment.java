@@ -19,6 +19,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.firestore.GeoPoint;
 
 import database.GeoMarker;
 
@@ -29,10 +30,13 @@ import database.GeoMarker;
  * through a {@link Bundle} using the keys of the Activity, then the bundle is unpacked into a {@link GeoMarker} and
  * a {@link MarkerOptions} object. In this GUI the data collected and the description/title, are shown
  * on different parts of the interface, even thought it would make more sense to pack them under a Marker's
- * {@link Marker#setTitle(String)} and {@link Marker#setSnippet(String)}, but this page is for inspection,
+ * {@link MarkerOptions#title(String)} and {@link MarkerOptions#title(String)}, but this page is for inspection,
  * so everything is put on it's own place.
  * This fragment doesn't have a button of it's own to click when the user wants to commit the data,
  * the {@link MainActivity}'s button is used.
+ * Maps use {@link LatLng} instances to mark a location whereas Firestore uses {@link GeoPoint},
+ * so an instance of both is kept, one as this class's attribute and the other as {@link GeoMarker}
+ * class' attribute, a method is also present to convert from the one to the other.
  */
 public class FinalFragment extends Fragment implements Resettable {
 
@@ -92,6 +96,7 @@ public class FinalFragment extends Fragment implements Resettable {
 
     /**
      * Used to get a default marker look with customized colour.
+     *
      * @param hue the hue of the colour
      * @return a default marker look coloured by the given colour
      */
@@ -111,7 +116,7 @@ public class FinalFragment extends Fragment implements Resettable {
     private void loadData() {
         Bundle markerData = getArguments();
         coordinates = new LatLng(markerData.getDouble(MainActivity.BUNDLE_KEYS_MARKER_LOCATION_LAT), markerData.getDouble(MainActivity.BUNDLE_KEYS_MARKER_LOCATION_LNG));
-        geoMarker.location = coordinates;
+        geoMarker.location = toGeoPoint(coordinates);
         geoMarker.hue = markerData.getFloat(MainActivity.BUNDLE_KEYS_MARKER_COLOUR);
         geoMarker.title = markerData.getString(MainActivity.BUNDLE_KEYS_MARKER_TITLE);
         geoMarker.description = markerData.getString(MainActivity.BUNDLE_KEYS_MARKER_DESCRIPTION);
@@ -124,10 +129,26 @@ public class FinalFragment extends Fragment implements Resettable {
         sensorName = markerData.getString(MainActivity.BUNDLE_KEYS_MARKER_SENSOR_NAME);
     }
 
+    /**
+     *Converts a LatLng object to a GeoPoint object, used to store the location to a GeoMarker object
+     * to be committed to the database, since FireBase uses this class type to store locations.
+     * @param location the location
+     * @return the same location as a GeoPoint object
+     */
+    private GeoPoint toGeoPoint(LatLng location) {
+        return new GeoPoint(location.latitude, location.longitude);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mapView.onPause();
+    }
+
     @Override
     public void onResume() {
-        mapView.onResume();
         super.onResume();
+        mapView.onResume();
     }
 
     @Override

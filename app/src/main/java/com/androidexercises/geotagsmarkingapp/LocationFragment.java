@@ -87,7 +87,7 @@ public class LocationFragment extends Fragment implements Resettable {
         mapView.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(GoogleMap googleMap) {
-                initGMap(googleMap);
+                LocationFragment.this.onMapReady(googleMap);
             }
         });
         buttonHandler.blockButton();
@@ -95,29 +95,39 @@ public class LocationFragment extends Fragment implements Resettable {
     }
 
     @Override
+    public void onPause() {
+        super.onPause();
+        mapView.onResume();
+    }
+
+    @Override
     public void onResume() {
+        Log.i("fragments_location", "onResume called");
         super.onResume();
         mapView.onResume();
-        Log.i("fragments_location", "onResume called");
-        if (!locManager.isProviderEnabled(LocationManager.GPS_PROVIDER))
-            showGPSPromptDialogue();
+        mapView.getMapAsync(new OnMapReadyCallback() {
+            @Override
+            public void onMapReady(GoogleMap googleMap) {
+                LocationFragment.this.onMapReady(googleMap);
+            }
+        });
     }
 
     @Override
     public void onDestroy() {
+        Log.i("fragments_location", "onDestroy called");
         super.onDestroy();
         mapView.onDestroy();
-        Log.i("fragments_location", "onDestroy called");
     }
 
     @Override
     public void onLowMemory() {
+        Log.i("fragments_location", "onLowMemory called");
         super.onLowMemory();
         mapView.onLowMemory();
-        Log.i("fragments_location", "onLowMemory called");
     }
 
-    private void initGMap(GoogleMap googleMap) {
+    private void onMapReady(GoogleMap googleMap) {
         Log.i("fragments_location", "init of google map");
         gMap = googleMap;
         //Initializes the location manager, sub-procedures and requests location permission, GPS or Network, to do so
@@ -178,7 +188,9 @@ public class LocationFragment extends Fragment implements Resettable {
      */
     private void setMyLocationButton() {
         Log.i("location", "my location button set");
+        //Find my location button
         gMap.getUiSettings().setMyLocationButtonEnabled(true);
+        //My location button "blue dot" on the map
         gMap.setMyLocationEnabled(true);
         MapsInitializer.initialize(getActivity());
     }
@@ -267,8 +279,7 @@ public class LocationFragment extends Fragment implements Resettable {
                 Log.i("location", "my location button invoked");
                 /**
                  * {@link GoogleMap#getMyLocation()} method is deprecated and the use of com.google.android.gms.location.FusedLocationProviderApi
-                 * is recommended, but this needs extra configuration and provided more features that will not be needed for this app, also the
-                 * use of this API requires the app to be dependent of the Google Services Framework, which might not supported.
+                 * is recommended, but this needs extra configuration and provides more features that will not be needed for this app.
                  * Simply put too much effort and extra features that won't be even used.
                  */
                 Location location = gMap.getMyLocation();

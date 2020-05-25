@@ -33,9 +33,9 @@
     <string name="sns_btn_str_measure">Πάρε μέτρηση</string>
     <string name="sns_value_label">Τιμή:</string>
 
-    <string name="desc_title_label">Τίτλος σημαδιού: </string>
+    <string name="desc_ttl_label">Τίτλος σημαδιού: </string>
     <string name="desc_desc_label">Περιγραφή: </string>
-    <string name="desc_title_hint">Ο τίτλος/όνομα του σημαδιού σου</string>
+    <string name="desc_ttl_hint">Ο τίτλος/όνομα του σημαδιού σου</string>
     <string name="desc_desc_hint">Η περιγραφή του σημαδιού σου</string>
 
     <string name="fn_sns_ttl_label">Τα δεδομένα του αισθητήρα σου</string>

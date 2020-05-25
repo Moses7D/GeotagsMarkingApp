@@ -29,7 +29,7 @@ import java.util.List;
  *    in a graphical way.
  *  * 02 validate data before committing them to the database
  *  * 03 add an option to not customize the colour of the marker (probably button), although if the {@link com.madrapps.pikolo.HSLColorPicker}
- *    is not touched then the marker gets no custom colour, but the user is not aware of that.
+ *    is not touched then the HSLColorPicker returns 0 which is the primary red, the default colour of the markers, but the user is not aware of that.
  */
 
 /**
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements ButtonHandler {
     public final static String FRAGMENTS_TAG_DESCRIPTION_FRAGMENT = "com.androidexercises.geotagsmarkingapp.DescriptionFragment";
     public final static String FRAGMENTS_TAG_FINAL_FRAGMENT = "com.androidexercises.geotagsmarkingapp.FinalFragment";
 
-    // Keys to be used on the Budle
+    // Keys to be used on the Bundle that passes the data to the FinalFragment
     public final static String BUNDLE_KEYS_MARKER_LOCATION_LNG = "com.androidexercises.geotagsmarkingapp.GeoMarker.location.lng";
     public final static String BUNDLE_KEYS_MARKER_LOCATION_LAT = "com.androidexercises.geotagsmarkingapp.GeoMarker.location.lat";
     public final static String BUNDLE_KEYS_MARKER_SENSOR_CODE = "com.androidexercises.geotagsmarkingapp.GeoMarker.SensorFragment.code";
@@ -84,7 +84,11 @@ public class MainActivity extends AppCompatActivity implements ButtonHandler {
         details = findViewById(R.id.act_dtl);
         mainButton = findViewById(R.id.act_btn_next);
         loadTexts();
-        //Load all the fragments to the fragment manager if this is a new run, and set the right text
+        /*
+        Load all the fragments to the fragment manager if this is a new run, and set the right text,
+        Fragments are loaded to the Manager for the simple reason to be seeked with their tag instead of being created anew each time
+        and because they are needed to stay alive attach,hide,detach and show methods are used instead of replace.
+        */
         if (findViewById(R.id.frag_cont) != null) {
             if (savedInstanceState != null) return;
             //All fragments once loaded are detached, except for the LocationFragment which is the first fragment
